@@ -59,10 +59,10 @@
 </ol>
 <h4>Data Preparation for mapping</h4>
 <ol type=”1”>
-<li>We created a python script to process the downloaded data and count the number of records per “scanningcenter” tag per month. The result is a spreadsheet where each row represents a year in a month and each column represents the number of records tagged with the “scanningcenter” value for that month. (insert link to Lucian’s script here)</li>
+<li>We created a python script to process the downloaded data and count the number of records per “scanningcenter” tag per month. The result is a spreadsheet where each row represents a year in a month and each column represents the number of records tagged with the “scanningcenter” value for that month. <a href="https://github.com/scanninglabor/IAScanningLabor/blob/d4d5f1ccb90715b904a6c692786f6be946a79b26/code/count_per_center_per_month.csv">View the csv file here.</a></li>
 <li>Next, we geocoded the data. To do this, we iterated over every record in the scans/tag/month dictionary and mapped each tag to the center it corresponded with, adding together the number of records along the way. For example, if there were 90 records tagged with “il” and 3 tagged with “ill” in January 2018, there should be 93 scans at the University of Illinois during that time period. If the number of records digitized in a month was 0, we did not include the center on the map (instead, assuming it closed).</li>
 <li>We transformed each date into YYYY-MM-DD HH:MM:SS format. </li>
-<li>We created a csv file where each row corresponds to a scanning center for each month of the period of time between December 2001 to October 2022. See creates_csv_map.py</li>
+<li>We created a csv file where each row corresponds to a scanning center for each month of the period of time between December 2001 to October 2022. See <a href="https://github.com/scanninglabor/IAScanningLabor/blob/d4d5f1ccb90715b904a6c692786f6be946a79b26/code/creates_csv_map.py">creates_csv_map.py</a></li>
 </ol>
 <h4>Making the KeplerGL map</h4>
 <p>KeplerGL is an open source mapping platform run on Uber’s mapping API. We decided to use it in lieu of Esri's ArcGIS because it is open source and allows for easy export to HTML. We uploaded the csv file containing the number of scans per center per month to Kepler’s online user interface. From there, we made the radius of each point correspond to the number of scans, “count.” Next, we made the color of the point dependent on how certain we were that we had geocoded the location properly. Finally, we added a time filter to create the animation.</p>
