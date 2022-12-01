@@ -1,4 +1,5 @@
-# used this script to consolidate scan centers with multiple scanningcenter ids in the metadata into one scan center (created the centers_per_month.csv file)
+# used this script to consolidate scan centers with multiple scanningcenter ids in the metadata into one scan center 
+# created the count_per_center_per_month.csv file
 from creates_csv_map import csv_to_dict, makes_results_csv
 def scanid_to_scan_center_name():
     # adds the counts for each scan center id per month together to get total scans per center
