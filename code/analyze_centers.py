@@ -1,9 +1,12 @@
+# used to create maps based on per center stats 
 import csv
 
 
 def scan_center_stats():
-    center_stats = csv_to_dict("/Users/elizabethschwartz/Documents/fall_2022/pythonProject/data/per_center_stats.csv")
-    geocoder = csv_to_dict("insert path to locations_file.csv")
+#     insert complete path to per_center_stats.csv file
+    center_stats = csv_to_dict("per_center_stats.csv")
+#     insert complete path to "locations_file.csv"
+    geocoder = csv_to_dict("locations_file.csv")
     center_report = makes_centers_report(geocoder)
     for this_stat in center_stats:
         for center in geocoder:
