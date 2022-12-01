@@ -1,11 +1,10 @@
-
-from testing import csv_to_dict, makes_results_csv
+# used this script to consolidate scan centers with multiple scanningcenter ids in the metadata into one scan center (created the centers_per_month.csv file)
+from creates_csv_map import csv_to_dict, makes_results_csv
 def scanid_to_scan_center_name():
     # adds the counts for each scan center id per month together to get total scans per center
     # per month
-    center_counts = csv_to_dict("/Users/elizabethschwartz/Documents/fall_2022/pythonProject/data/centers_per_year.csv")
-    centers = csv_to_dict(
-        "/Users/elizabethschwartz/Documents/fall_2022/pythonProject/data/corrected_scancenter_names.csv")
+    center_counts = csv_to_dict("path to file with center counts")
+    centers = csv_to_dict("locations_file.csv")
     names_list = []
     for center in centers:
         center['scan_center_ids'] = center['scan_center_ids'].split(' || ')
