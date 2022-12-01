@@ -1,4 +1,4 @@
-from testing import csv_to_dict, makes_results_csv
+# creates a csv file for scans per center per year to be uploaded to keplergl
 import calendar
 def main():
     records_to_map = []
@@ -136,6 +136,37 @@ def get_scans_by_center(records):
         scans_by_centers.append({"center": this_center, "records": the_records})
 
     return scans_by_centers
+
+def makes_results_csv(records, outfile_name):
+    headers = records[0].keys()
+    rows = records
+
+    with open(outfile_name, 'w', encoding='UTF-8', newline='') as outfile:
+        writer = csv.DictWriter(outfile, fieldnames=headers)
+        writer.writeheader()
+        for row in rows:
+            try:
+                writer.writerow(row)
+            except AttributeError:
+                pass
+
+def csv_to_dict(csv_file_name):
+    results = []
+    with open(csv_file_name, 'r', newline='', encoding='utf-8') as infile:
+        csvin = csv.reader(infile)
+        headers = next(csvin)
+        # Make headers str.lower
+        headers = [header.strip().lower() for header in headers]
+        # Save dictionary of header:value for each row of data
+        for row in csvin:
+            n = 0
+            your_dict = {}
+            for column in row:
+                your_dict[headers[n]] = column
+                n += 1
+            results.append(your_dict)
+    return results
+
 
 
 
