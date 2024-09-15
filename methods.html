@@ -130,12 +130,12 @@
 <li>IA-blog: archived HTML pages from IA's blog</li>
   </ul>
   
-  <p>Jupyter notebooks used to scrape, clean, and create visualizations along with our website code are available at <a href="https://github.com/scanninglabor/IAScanningLabor">our Github repo</a></p>
-  
+  <p>The code to create the website is available at <a href="https://github.com/scanninglabor/IAScanningLabor">our static site repo</a></p>
+  <p>The code for the high volume API queries and creating all of our data visualizations is available at <a href="https://github.com/ers6/ia_scanning_labor_data">this Github Repo</a></p>
   <h3>Mapping Methods</h3>
   <h4>Geocoding the centers</h4>
 <p>Geocoding refers to the process through which geographers (or GIS systems) transform language referring to a place into mappable geographic coordinates. GIS systems can often automatically geocode information like addresses, city names, or country names. However, they are incapable of resolving less standardized place references to geographic coordinates. In that case, a human must geocode them.</p>
-<p>For the Scanning Labor project, we geocoded the metadata field, “scanningcenter” in the downloaded Open LIbrary records. Of the 3 million records we scraped from the Open Library API, only 2.5 million had any information in the “scanningcenter” field. Workers created these 500,000 records mostly from 2001 to 2008 under the purview of the Google Books project. Google, unlike IA, required employees to sign NDAs to not reveal the scanning center location.  As such, we cannot geocode the centers at which workers scanned these 500,000 books based on the records we have. This geographic opacity is strategic on Google’s part.</p>
+<p>For the Scanning Labor project, we geocoded the metadata field, “scanningcenter” in the downloaded Open Library records. Of the 3 million records we scraped from the Open Library API, only 2.5 million had any information in the “scanningcenter” field. Workers created these 500,000 records mostly from 2001 to 2008 under the purview of the Google Books project. Google, unlike IA, required employees to sign NDAs to not reveal the scanning center location.  As such, we cannot geocode the centers at which workers scanned these 500,000 books based on the records we have. This geographic opacity is strategic on Google’s part.</p>
 <p>The other 2.5 million records contain 93 unique values in the “scanningcenter” field. We attempted to geocode these through the following method:</p>
 <ol type=”1”>
 <li>For each value, we entered the following query in the archive.org search bar: “scanningcenter:(value)”. For example, to geocode the value “il”, we searched “scanningcenter:(il)” </li>
