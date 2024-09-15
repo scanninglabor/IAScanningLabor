@@ -92,11 +92,8 @@
 <section style="background-color:white" class="engine"></section>
 
 <div class="mbr-text col-12 mbr-fonts-style display-5 col-md-12">
-  <h1>Methods:</h1>
-  <h3>Data scraping and API Methods</h3>
-  <p> We first accessed the <a href="https://openlibrary.org/developers/dumps">Open Library Data Dumps</a>, which provides metadata records and Internet Archive identifiers for a substantial subset (roughly 4 million books out of 8 million total) of the overall IA collection. </p>
-  <p> We then used the IA identifiers to programatically query the Internet Archive API using the <a href="https://archive.org/developers/quick-start-pip.html">IA python package</a>, keeping the metadata fields relevant for the creative process.</p>
-  
+  <h1>Data:</h1>
+
   <p>Metadata key</a>
   <ul>
     <li>ID: Internet Archive unique identifier</li>
@@ -125,11 +122,12 @@
     <li>date: cleaned and formatted date</li>
   
   </ul>
-  <p>Complete and processed data files are available at <a href="https://uofi.box.com/s/2hvihu1tp4t2m0sapdb7wbjkl2zvpudf">this Box site</a>. </p>
+  <p>Complete and processed data files are available at <a href="https://wustl.box.com/s/sd9nvxbh3hym7uycia5bul2a7cu4q9rn">this Box site</a>. </p>
     <ul>
-      <li>IA_metadata_full.csv: complete scraped metadata for 3 million books</li>
-      <li>centers_per_year.csv: books scanned at each center per month</li>
-      <li>per_center_stats.csv: finalized list of geocoded centers with various aggregate statistics</li>
+      <li>READ_ME.boxnote: details about datasets</li>
+      <li>geocoded-texts-data.csv: combined metadata across of all IA centers</li>
+      <li>scancenter-data: raw metadata from IA</li>
+<li>IA-blog: archived HTML pages from IA's blog</li>
   </ul>
   
   <p>Jupyter notebooks used to scrape, clean, and create visualizations along with our website code are available at <a href="https://github.com/scanninglabor/IAScanningLabor">our Github repo</a></p>
